@@ -1,0 +1,4 @@
+-- Optional starter seed for shared cars table.
+-- This SQL only inserts example records; frontend fallback has the full 30-card catalog.
+-- To seed all 30 accurately, use Supabase Table Editor CSV import after exporting a CSV
+-- prepared from the demo catalog, or ask to generate a full 30-row seed file.

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101820">
+  <title>TURDIEV AUTO — автомобили мечты</title>
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="Turdiev Auto главная"><span class="brand-mark">TA</span><span>TURDIEV
+        <b>AUTO</b><small>PREMIUM CARS</small></span></a>
+    <div class="search-wrap"><span>⌕</span><input id="searchInput" type="search"
+        placeholder="Найти марку, модель или год..." aria-label="Поиск автомобилей"></div>
+    <nav class="nav-links">
+      <a href="#catalog" data-i18n="catalog">Каталог</a><a href="#booking" data-i18n="booking">Бронирование</a>
+      <a href="#about" data-i18n="about">О нас</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn" id="themeToggle" title="Сменить тему" aria-label="Сменить тему">☾</button>
+      <button class="icon-btn" id="langToggle" title="Язык">RU</button>
+      <a class="icon-btn count-link" href="favorites.html" title="Избранное">♡ <span id="favoriteCount">0</span></a>
+      <a class="icon-btn count-link" href="cart.html" title="Корзина">▣ <span id="cartCount">0</span></a>
+      <a class="profile-btn" href="auth.html?mode=login">Sign in</a><a class="profile-btn signup-link"
+        href="auth.html?mode=signup">Sign up</a><a class="icon-btn person-link" href="admin.html"
+        title="Профиль / админ-панель" aria-label="Профиль и админ-панель">♙</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Открыть меню">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow"><i></i> PREMIUM AUTOMOTIVE EXPERIENCE</span>
+        <h1>Ваша следующая<br><em>история начинается</em><br>за рулём.</h1>
+        <p>Подберите автомобиль мечты, сравните характеристики и забронируйте удобным способом.</p>
+        <div class="hero-actions"><a class="primary-btn" href="#catalog">Выбрать автомобиль <span>↗</span></a><a
+            class="text-btn" href="#about">О салоне <span>→</span></a></div>
+        <div class="hero-stats">
+          <div><strong>30</strong><span>автомобилей</span></div>
+          <div><strong>3</strong><span>мировые марки</span></div>
+          <div><strong>24/7</strong><span>онлайн-заявки</span></div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-glow"></div><img
+          src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=1500&q=85"
+          alt="Премиальный Mercedes-Benz" onerror="this.style.display='none'">
+        <div class="hero-image-label"><span>FEATURED VEHICLE</span><strong>Mercedes-Benz
+            AMG</strong><small>Элегантность. Мощность. Характер.</small></div>
+        <div class="vertical-label">TURDIEV AUTO / EST. 2026</div>
+      </div>
+    </section>
+
+    <section class="trust-strip"><span>✦ Проверенные автомобили</span><span>✦ Прозрачные характеристики</span><span>✦
+        Удобное бронирование</span><span>✦ Поддержка владельца</span></section>
+
+    <section id="catalog" class="section catalog-section">
+      <div class="section-heading">
+        <div><span class="eyebrow">НАШ АВТОПАРК</span>
+          <h2>Найдите свой <em>характер.</em></h2>
+          <p>30 тщательно подобранных автомобилей — от городских моделей до мощных спортседанов.</p>
+        </div>
+        <div class="results-pill"><span id="resultsCount">30</span> автомобилей</div>
+      </div>
+      <div class="filters">
+        <div class="brand-filters" id="brandFilters"><button class="filter-chip active" data-brand="all">Все
+            марки</button><button class="filter-chip" data-brand="Mercedes-Benz">Mercedes-Benz</button><button
+            class="filter-chip" data-brand="Toyota">Toyota</button><button class="filter-chip"
+            data-brand="BMW">BMW</button></div>
+        <div class="filter-right"><select id="priceFilter" aria-label="Фильтр цены">
+            <option value="all">Любая цена</option>
+            <option value="under50">До $50 000</option>
+            <option value="50to100">$50 000–100 000</option>
+            <option value="over100">От $100 000</option>
+          </select><select id="sortSelect" aria-label="Сортировка">
+            <option value="featured">Сначала популярные</option>
+            <option value="priceAsc">Сначала дешевле</option>
+            <option value="priceDesc">Сначала дороже</option>
+            <option value="yearDesc">Сначала новее</option>
+          </select></div>
+      </div>
+      <div class="catalog-layout">
+        <aside class="side-filter">
+          <h3>Подбор автомобиля</h3><label>Тип кузова<select id="bodyFilter">
+              <option value="all">Любой кузов</option>
+              <option>Sedan</option>
+              <option>SUV</option>
+              <option>Coupe</option>
+              <option>Hatchback</option>
+              <option>Pickup</option>
+            </select></label><label>Год выпуска<select id="yearFilter">
+              <option value="all">Любой год</option>
+              <option value="2024">2024 и новее</option>
+              <option value="2022">2022 и новее</option>
+              <option value="2020">2020 и новее</option>
+            </select></label><button id="resetFilters" class="reset-btn">Сбросить фильтры ↺</button>
+          <div class="side-note"><span>✦</span><b>Нужна помощь?</b>
+            <p>Владелец салона поможет выбрать подходящую комплектацию.</p><a href="#booking">Связаться →</a>
+          </div>
+        </aside>
+        <div class="cars-grid" id="carsGrid" aria-live="polite"></div>
+      </div>
+      <div class="pagination" id="pagination"></div>
+    </section>
+
+    <section id="about" class="about-section">
+      <div class="about-image"><img
+          src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1200&q=85"
+          alt="Автомобиль в салоне"></div>
+      <div class="about-copy"><span class="eyebrow">TURDIEV AUTO</span>
+        <h2>Не просто покупка.<br><em>Новый путь.</em></h2>
+        <p>Мы собрали каталог автомобилей трёх известных марок, чтобы вам было проще сравнить модели, изучить
+          характеристики и оставить заявку онлайн.</p>
+        <div class="owner-card">
+          <div class="owner-avatar">TI</div>
+          <div><small>ВЛАДЕЛЕЦ АВТОСАЛОНА</small><strong>Турдиев Ислам</strong><span>Персональный подход к каждому
+              клиенту</span></div>
+        </div><a class="primary-btn" href="#booking">Записаться на встречу <span>↗</span></a>
+      </div>
+    </section>
+
+    <section id="booking" class="section booking-section">
+      <div class="section-heading">
+        <div><span class="eyebrow">ВАШ СЛЕДУЮЩИЙ ШАГ</span>
+          <h2>Забронируйте <em>автомобиль.</em></h2>
+          <p>Выберите модель и удобный способ связи. После отправки откроется WhatsApp с готовой заявкой.</p>
+        </div>
+      </div>
+      <div class="booking-card">
+        <form id="bookingForm">
+          <div class="form-grid"><label>Ваше имя<input id="bookingName" required minlength="2"
+                placeholder="Как к вам обращаться?"></label><label>Телефон<input id="bookingPhone" required type="tel"
+                placeholder="+996 ___ ___ ___"></label><label>Автомобиль<select id="bookingCar" required>
+                <option value="">Выберите автомобиль</option>
+              </select></label><label>Способ бронирования<select id="bookingType">
+                <option value="Встреча в автосалоне">Личная встреча</option>
+                <option value="Онлайн-консультация">Онлайн-консультация</option>
+              </select></label><label class="full-field">Комментарий<textarea id="bookingComment" rows="3"
+                placeholder="Удобное время, вопросы, пожелания..."></textarea></label></div><button class="primary-btn"
+            type="submit">Отправить заявку в WhatsApp <span>↗</span></button>
+          <p class="form-hint">Нажимая кнопку, вы откроете WhatsApp с заполненным сообщением. Отправку сообщения нужно
+            подтвердить в WhatsApp.</p>
+        </form>
+      </div>
+    </section>
+
+    <section id="favorites" class="section utility-section legacy-hidden">
+      <div class="section-heading">
+        <div><span class="eyebrow">ВАШ ЛИЧНЫЙ СПИСОК</span>
+          <h2>Избранное <em>♡</em></h2>
+          <p>Сохранённые автомобили, которые вам понравились.</p>
+        </div>
+      </div>
+      <div class="cars-grid utility-grid" id="favoritesGrid"></div>
+      <p class="empty-state" id="favoritesEmpty">Пока нет избранных автомобилей. Нажмите ♡ на карточке машины.</p>
+    </section>
+    <section id="cart" class="section utility-section cart-section legacy-hidden">
+      <div class="section-heading">
+        <div><span class="eyebrow">ВАШ ВЫБОР</span>
+          <h2>Корзина <em>▣</em></h2>
+          <p>Добавьте автомобиль в список для дальнейшего оформления заявки.</p>
+        </div>
+      </div>
+      <div id="cartItems" class="cart-items"></div>
+      <div class="cart-summary" id="cartSummary"><span>Предварительная сумма</span><strong
+          id="cartTotal">$0</strong><button class="primary-btn" id="cartBookButton">Перейти к бронированию →</button>
+      </div>
+      <p class="empty-state" id="cartEmpty">Корзина пока пуста. Добавьте автомобиль из каталога.</p>
+    </section>
+
+    <section id="account" class="section account-section legacy-hidden">
+      <div class="section-heading">
+        <div><span class="eyebrow">ЛИЧНЫЙ КАБИНЕТ</span>
+          <h2>Ваш <em>профиль.</em></h2>
+          <p>Создайте аккаунт, чтобы сохранять избранное и заявки на этом устройстве.</p>
+        </div>
+      </div>
+      <div class="account-card" id="accountPanel"></div>
+    </section>
+    <section id="admin" class="section admin-section legacy-hidden">
+      <div class="section-heading">
+        <div><span class="eyebrow">УПРАВЛЕНИЕ САЛОНОМ</span>
+          <h2>Админ-<em>панель.</em></h2>
+          <p>Добавление, изменение и удаление автомобилей доступно администратору.</p>
+        </div>
+      </div>
+      <div id="adminPanel" class="admin-card"></div>
+    </section>
+  </main>
+  <footer><a class="brand footer-brand" href="#home"><span class="brand-mark">TA</span><span>TURDIEV
+        <b>AUTO</b><small>PREMIUM CARS</small></span></a>
+    <p>© 2026 Turdiev Auto. Автомобили, консультации и бронирование.</p><a href="#home">Наверх ↑</a>
+  </footer>
+  <a class="floating-admin-link" href="admin.html" title="Профиль и админ-панель"
+    aria-label="Открыть админ-панель">♙</a>
+  <div class="toast" id="toast" role="status"></div>
+  <dialog id="carDialog" class="car-dialog"><button class="dialog-close" id="closeDialog"
+      aria-label="Закрыть">×</button>
+    <div id="carDetails"></div>
+  </dialog>
+  <dialog id="authDialog" class="auth-dialog"><button class="dialog-close" id="closeAuth"
+      aria-label="Закрыть">×</button>
+    <div class="auth-tabs"><button class="active" data-auth="login">Вход</button><button
+        data-auth="register">Регистрация</button></div>
+    <form id="authForm">
+      <h2 id="authTitle">С возвращением</h2>
+      <p id="authSubtitle">Войдите в личный кабинет</p><label>Имя<input id="authName"
+          placeholder="Ваше имя"></label><label>Email<input id="authEmail" type="email" required
+          placeholder="you@example.com"></label><label>Пароль<input id="authPassword" type="password" minlength="6"
+          required placeholder="Минимум 6 символов"></label><button class="primary-btn" type="submit"
+        id="authSubmit">Войти →</button><small>Аккаунт управляется Supabase Auth. Пароли не хранятся в
+        localStorage.</small>
+    </form>
+  </dialog>
+  <script type="module" src="script.js"></script>
+</body>
+
+</html>

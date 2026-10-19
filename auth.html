@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="light">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101820">
+  <title>Вход / регистрация — TURDIEV AUTO</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .auth-page {
+      min-height: 100vh;
+      background: var(--bg);
+      display: grid;
+      grid-template-columns: 1fr 1fr
+    }
+
+    .auth-art {
+      position: relative;
+      min-height: 100vh;
+      background: #111b24;
+      overflow: hidden;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 38px 7%
+    }
+
+    .auth-art:before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, #10182022, #101820e8), url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1400&q=85') center/cover
+    }
+
+    .auth-art>* {
+      position: relative
+    }
+
+    .auth-art .brand {
+      color: #fff
+    }
+
+    .auth-art-copy {
+      margin: auto 0;
+      max-width: 500px
+    }
+
+    .auth-art-copy .eyebrow {
+      color: #dfbd84
+    }
+
+    .auth-art-copy h1 {
+      font-size: clamp(42px, 5vw, 68px);
+      line-height: 1.06;
+      letter-spacing: -2px
+    }
+
+    .auth-art-copy p {
+      color: #d0d6da;
+      line-height: 1.8;
+      max-width: 420px
+    }
+
+    .auth-art-foot {
+      font-size: 10px;
+      color: #c5cbd0;
+      letter-spacing: 1px
+    }
+
+    .auth-main {
+      display: grid;
+      place-items: center;
+      padding: 35px 6%;
+      position: relative
+    }
+
+    .auth-top {
+      position: absolute;
+      top: 30px;
+      left: 35px
+    }
+
+    .auth-card {
+      width: min(430px, 100%);
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: clamp(24px, 4vw, 40px);
+      box-shadow: var(--shadow)
+    }
+
+    .auth-card h2 {
+      font: 800 29px Manrope;
+      letter-spacing: -1px;
+      margin: 20px 0 8px
+    }
+
+    .auth-card>p {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.7;
+      margin-bottom: 25px
+    }
+
+    .auth-switch {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5px;
+      padding: 5px;
+      background: var(--surface2);
+      border-radius: 12px
+    }
+
+    .auth-switch a {
+      text-align: center;
+      padding: 12px;
+      border-radius: 9px;
+      font-size: 12px;
+      color: var(--muted)
+    }
+
+    .auth-switch a.active {
+      background: var(--surface);
+      color: var(--text);
+      box-shadow: var(--shadow);
+      font-weight: 700
+    }
+
+    .auth-form {
+      display: grid;
+      gap: 15px
+    }
+
+    .auth-form label {
+      display: grid;
+      gap: 8px;
+      font-size: 11px;
+      color: var(--muted)
+    }
+
+    .auth-form input {
+      width: 100%;
+      padding: 14px;
+      border: 1px solid var(--line);
+      background: var(--bg);
+      color: var(--text);
+      border-radius: 11px;
+      outline-color: var(--accent)
+    }
+
+    .auth-form .primary-btn {
+      width: 100%;
+      margin-top: 5px
+    }
+
+    .auth-note {
+      font-size: 10px !important;
+      color: var(--muted);
+      margin: 17px 0 0 !important
+    }
+
+    .auth-error {
+      display: none;
+      background: #d94c5915;
+      border: 1px solid #d94c5944;
+      color: #c23c49;
+      border-radius: 10px;
+      padding: 11px;
+      font-size: 11px;
+      line-height: 1.5
+    }
+
+    .auth-error.show {
+      display: block
+    }
+
+    .auth-back {
+      display: inline-flex;
+      margin-top: 18px;
+      font-size: 11px;
+      color: var(--muted)
+    }
+
+    @media(max-width:760px) {
+      .auth-page {
+        grid-template-columns: 1fr
+      }
+
+      .auth-art {
+        min-height: 250px;
+        padding: 25px 6%
+      }
+
+      .auth-art-copy {
+        margin: 35px 0 10px
+      }
+
+      .auth-art-copy h1 {
+        font-size: 38px;
+        margin: 14px 0
+      }
+
+      .auth-art-copy p {
+        font-size: 12px
+      }
+
+      .auth-art-foot {
+        display: none
+      }
+
+      .auth-main {
+        padding: 35px 5%;
+        min-height: calc(100vh - 250px)
+      }
+
+      .auth-top {
+        top: 20px;
+        left: 20px
+      }
+
+      .auth-card {
+        margin-top: 25px
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="auth-page">
+    <aside class="auth-art"><a class="brand" href="index.html"><span class="brand-mark">TA</span><span>TURDIEV
+          <b>AUTO</b><small>PREMIUM CARS</small></span></a>
+      <div class="auth-art-copy"><span class="eyebrow">YOUR JOURNEY STARTS HERE</span>
+        <h1>Войдите в мир<br><em>автомобилей.</em></h1>
+        <p>Сохраняйте понравившиеся модели, управляйте своими заявками и получайте персональную консультацию.</p>
+      </div>
+      <div class="auth-art-foot">TURDIEV AUTO · PREMIUM AUTOMOTIVE EXPERIENCE</div>
+    </aside>
+    <main class="auth-main">
+      <div class="auth-top"><button class="icon-btn" id="themeToggle" aria-label="Сменить тему">☾</button></div>
+      <section class="auth-card">
+        <div class="auth-switch"><a id="loginTab" href="auth.html?mode=login">Sign in</a><a id="signupTab"
+            href="auth.html?mode=signup">Sign up</a></div>
+        <h2 id="formTitle">С возвращением</h2>
+        <p id="formSubtitle">Войдите в аккаунт, чтобы продолжить.</p>
+        <div class="auth-error" id="authError" role="alert"></div>
+        <form class="auth-form" id="authForm"><label id="nameWrap" hidden>Ваше имя<input id="name" autocomplete="name"
+              placeholder="Ислам Турдиев" minlength="2"></label><label>Email<input id="email" type="email"
+              autocomplete="email" required placeholder="you@example.com"></label><label>Пароль<input id="password"
+              type="password" autocomplete="current-password" required minlength="6"
+              placeholder="Не менее 6 символов"></label><button class="primary-btn" id="submitBtn" type="submit">Войти в
+            аккаунт <span>↗</span></button></form>
+        <p class="auth-note">Безопасная авторизация через Supabase. Пароль не сохраняется в браузерном localStorage.</p>
+        <a class="auth-back" href="index.html">← Вернуться в каталог</a>
+      </section>
+    </main>
+  </div>
+  <script type="module" src="auth-page.js"></script>
+</body>
+
+</html>
