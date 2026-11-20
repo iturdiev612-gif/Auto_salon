@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" fill="none">
+  <defs>
+    <linearGradient id="b" x1="14" y1="12" x2="82" y2="86" gradientUnits="userSpaceOnUse"><stop stop-color="#75C7FF"/><stop offset="1" stop-color="#1764D5"/></linearGradient>
+    <filter id="s" x="4" y="5" width="88" height="88" color-interpolation-filters="sRGB"><feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#123A78" flood-opacity=".2"/></filter>
+  </defs>
+  <g filter="url(#s)"><path d="M12 39 48 12l36 27v43a4 4 0 0 1-4 4H16a4 4 0 0 1-4-4V39Z" fill="url(#b)" stroke="#164EAA" stroke-width="3" stroke-linejoin="round"/><path d="M22 43 48 23l26 20v33H22V43Z" fill="#F7FBFF"/><path d="M28 46h40v22H28z" fill="#DCEEFF" stroke="#397FD2" stroke-width="3"/><path d="M23 70h50v9H23z" fill="#164EAA"/><path d="m34 61 5-8h18l7 8v7H34v-7Z" fill="#2072DF"/><path d="M42 55h13l5 7H38l4-7Z" fill="#D9F2FF"/><circle cx="40" cy="69" r="4" fill="#10284A"/><circle cx="58" cy="69" r="4" fill="#10284A"/><path d="M11 82h74" stroke="#8DD5FF" stroke-width="4" stroke-linecap="round"/></g>
+</svg>
